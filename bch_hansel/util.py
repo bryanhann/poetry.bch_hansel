@@ -7,3 +7,4 @@ def parse_args(args,block):
         exit(print(dedent(block)))
     return args
 
+def isopt(s): return s.startswith('-')

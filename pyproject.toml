@@ -18,3 +18,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 bch-hansel = 'bch_hansel.console:hansel'
+bch-hansel-find = 'bch_hansel.console:find'

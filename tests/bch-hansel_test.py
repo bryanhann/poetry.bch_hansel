@@ -8,6 +8,7 @@ case1.exp.stdout=dedent("""\
         testtree/.bch
         testtree/good/.bch
         testtree/good/A/.bch
+        testtree/good/A/A/.bch
         testtree/good/B/.bch
         testtree/good/B/B/.bch
         """)
