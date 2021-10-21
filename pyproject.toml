@@ -11,6 +11,8 @@ bch_config = {git = "https://github.com/bryanhann/poetry.bch_config", tag = "0.1
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pytest-shell = "^0.2.3"
+six = "^1.16.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

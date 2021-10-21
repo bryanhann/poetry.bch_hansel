@@ -1,9 +1,13 @@
 from pathlib import Path
 import pytest
 
+FIXTURES=Path(__file__).parent/'fixtures'
+TESTTREE=FIXTURES/'testtree'
+
 class Namespace(): pass
+
 @pytest.fixture
-def testtree(): return Path(__file__).parent/'fixtures/testtree'
+def testtree(): return TESTTREE
 
 @pytest.fixture
 def relpath(testtree): return lambda path: path.relative_to(testtree)
@@ -19,5 +23,4 @@ def q(testtree):
     paths.GB   = testtree/"good/B/.bch"
     paths.GBB  = testtree/"good/B/B/.bch"
     return paths
-
 
