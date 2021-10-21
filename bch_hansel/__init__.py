@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-MOUNT=os.environ.get('BCH_POETRY_HANSEL_MOUNT')
+MOUNT_ENV_KEY='BCH_POETRY_HANSEL_MOUNT'
 
 def gather(path):
     bch = '.bch'
@@ -24,7 +24,6 @@ def devices():
         return []
 
 def mount():
-    mp=os.environ.get(MOUNT)
-    mp=BCH_POETRY_HANSEL_MOUNT
+    mp=os.environ.get(MOUNT_ENV_KEY)
     if mp: mp=Path(mp)
     return mp
