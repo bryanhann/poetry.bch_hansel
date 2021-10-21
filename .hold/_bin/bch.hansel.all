@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+from pathlib import Path
+
+from lbin.bch.func import lmap
+from lbin.bch.hansel import gather
+
+CFG='.config/lbin.bch.hansel/host.mountpoint'
+
+USAGE=f"""
+USAGE:\n\t{Path(sys.argv[0]).name}\n
+DESCRIPTION:\n\tPrint all [*/.bch] directories reachable from either
+\tthe home directory or any mounted devices.\n\n\tUses [~/{CFG}].
+"""
+
+class ExcHansel(Exception): pass
+
+def mountlist():
+    cfg = Path.home()/CFG
+    if not cfg.is_file():
+        raise ExcHansel( f'\n\tMissing config file: [{cfg}]' )
+    try:
+        text = Path( cfg.read_text().strip() )
+        mp = Path( cfg.read_text().strip() )
+    except:
+        raise ExcHansel( f'\n\tConfig file contains unpathable string [{repr(text)}]')
+    if not mp.is_dir():
+        raise ExcHansel( f'\n\tHost has no directory at mountpoint [{repr(str(mp))}]' )
+    return list(mp.glob('*'))
+
+def main():
+    if len(sys.argv) > 1:
+        sys.stderr.write(USAGE)
+        return
+    roots = [ Path.home() ] + mountlist()
+    for root in roots:
+        for path in gather(root):
+            print(path)
+
+if __name__ == '__main__':
+    main()

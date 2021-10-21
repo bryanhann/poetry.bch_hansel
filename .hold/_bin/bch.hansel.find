@@ -1,0 +1,35 @@
+#!/bin/sh
+
+PROG=$(basename $0)
+main () {
+    for path in $(bch.hansel.all); do
+        [ -e $path/$1 ] && echo $path/$1
+    done
+}
+
+usage () {
+cat <<HERE
+USAGE:
+    $PROG TARGET
+
+DESCRIPTION:
+    return all [HANSEL]/[TARGET] found where [HANSEL]
+    is found from [bch.hansel.all]
+
+EXAMPLE:
+    $ $PROGRAM foo/bar
+    /User/Bozo/.bch/foo/bar
+    /Volumes/DevX/some/path/.bch/foo/bar
+
+SEE:
+    bch.hansel.all
+HERE
+}
+case .$1 in
+    .|.-h|.--help)
+        usage
+        ;;
+    *)
+        main $*
+        ;;
+esac
