@@ -22,7 +22,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 
 [[package]]
 name = "bch-config"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 category = "main"
 optional = false
@@ -35,8 +35,8 @@ bch_inject = {git = "https://github.com/bryanhann/poetry.bch_inject", tag = "0.1
 [package.source]
 type = "git"
 url = "https://github.com/bryanhann/poetry.bch_config"
-reference = "0.1.0"
-resolved_reference = "238fbc1e1d5c16bfbde70e1b8e4631b9342ff051"
+reference = "v0.1.1"
+resolved_reference = "438aeb9c0dfac3881d8cb36357bef34f0dab838d"
 
 [[package]]
 name = "bch-inject"
@@ -181,7 +181,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "26ac076c1022e500658f18843f4e3464513b30f374eb755e13d326bc41a0b488"
+content-hash = "e449473ed5de146573109d989e8ac004a3d3b5fd3d2de9290b80f770cd140680"
 
 [metadata.files]
 atomicwrites = [

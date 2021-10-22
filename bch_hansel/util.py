@@ -8,3 +8,6 @@ def parse_args(args,block):
     return args
 
 def isopt(s): return s.startswith('-')
+
+def lfilter(*a,**b): return list(filter(*a,**b))
+

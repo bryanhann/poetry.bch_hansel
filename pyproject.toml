@@ -7,7 +7,7 @@ authors = ["Bryan Hann <nobody@nowhere>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 bch_inject = {git = "https://github.com/bryanhann/poetry.bch_inject", tag = "0.1.2"  }
-bch_config = {git = "https://github.com/bryanhann/poetry.bch_config", tag = "0.1.0"  }
+bch_config = {git = "https://github.com/bryanhann/poetry.bch_config", tag = "v0.1.1"  }
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -18,4 +18,3 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 bch-hansel = 'bch_hansel.console:hansel'
-bch-hansel-find = 'bch_hansel.console:find'
